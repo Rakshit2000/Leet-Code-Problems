@@ -13,4 +13,13 @@ class Solution:
         else:
             return False
             
+          
+          
+# Using slicing
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if x < 0:
+            return False
+        return x == int(str(x)[::-1])
+            
         
