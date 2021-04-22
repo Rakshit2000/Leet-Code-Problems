@@ -1,0 +1,26 @@
+# 1st approach easy:
+
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        for i in set(nums):
+            if nums.count(i) > len(nums) // 2:
+                return i
+        
+        
+        
+        
+# A more logical way
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        x = nums[0]
+        count = 1
+        for i in range(1, len(nums)):
+            if x == nums[i]:
+                count += 1
+            else:
+                count -= 1
+            if count == 0:
+                x = nums[i]
+                count += 1
+        return x
+        
